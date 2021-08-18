@@ -41,6 +41,7 @@ input[type='text']{
     border: 2px solid #858299;
     height: 50px;
     padding: 10px;
+    text-align: center;
 }
 input[type='text']:focus {
     background-color: #3D4153;
@@ -95,10 +96,12 @@ color: #E0B612;
     margin-top: 20px;
     border-radius: 15px;
     padding: 5px 20px;
+    display: none;
 }
 .notify-section{
     width: 35%;
     margin: 0 auto;
+ 
 }
 .action-left {
     color: #FF3C5F;
