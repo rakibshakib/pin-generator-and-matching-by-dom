@@ -21,9 +21,13 @@ pinButton.addEventListener('click', () => {
 document.getElementById('cal-key-pad').addEventListener('click', (e) => {
     const keyNumber = e.target.innerText;
     const calcInput = document.getElementById('cal-input');
+
     if (isNaN(keyNumber)) {
         if (keyNumber == 'C') {
             calcInput.value = '';
+        }else if((keyNumber == '<')){
+            let inputValue = calcInput.value;
+            calcInput.value = inputValue.substr(0, inputValue.length-1);
         }
     } else {
         const perviousNumber = calcInput.value;
@@ -32,18 +36,18 @@ document.getElementById('cal-key-pad').addEventListener('click', (e) => {
     }
 })
 
-document.getElementById('submit-btn').addEventListener('click', ()=>{
+document.getElementById('submit-btn').addEventListener('click', () => {
     const failedNotification = document.getElementById('failed');
     const successNotification = document.getElementById('success');
     const pinValue = document.getElementById('pin-input').value;
     const inputValue = document.getElementById('cal-input').value;
-    if(pinValue == inputValue){
+    if (pinValue == inputValue) {
         failedNotification.style.display = 'none';
         successNotification.style.display = 'block';
         setTimeout(() => {
             successNotification.style.display = "none"; /* after 2s  display none notify failed */
         }, 2000);
-    }else{
+    } else {
         failedNotification.style.display = 'block';
         successNotification.style.display = 'none';
         setTimeout(() => {
