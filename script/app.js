@@ -40,8 +40,14 @@ document.getElementById('submit-btn').addEventListener('click', ()=>{
     if(pinValue == inputValue){
         failedNotification.style.display = 'none';
         successNotification.style.display = 'block';
+        setTimeout(() => {
+            successNotification.style.display = "none"; /* after 2s  display none notify failed */
+        }, 2000);
     }else{
         failedNotification.style.display = 'block';
         successNotification.style.display = 'none';
+        setTimeout(() => {
+            failedNotification.style.display = "none"; /* after 2s  display none notify failed */
+        }, 2000);
     }
 })
